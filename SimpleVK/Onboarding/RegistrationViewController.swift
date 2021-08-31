@@ -15,6 +15,7 @@ class RegistrationViewController: UIViewController, WKNavigationDelegate {
     override func loadView() {
         super.loadView()
         webView = WKWebView()
+        webView.scrollView.isScrollEnabled = false
         webView.navigationDelegate = self
         view = webView
     }
@@ -26,12 +27,21 @@ class RegistrationViewController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let fragment = webView.url?.fragment {
-            let equalSignPosition = fragment.index(fragment.startIndex, offsetBy: 13)
-            let andSignPosition = fragment.index(before: fragment.firstIndex(of: "&")!)
+            let components = fragment.components(separatedBy: "&")
             
-            let accessToken = fragment[equalSignPosition...andSignPosition]
+            let accessTokenString = components[0]
+            let positionAfterEqualSign = accessTokenString.index(after: accessTokenString.firstIndex(of: "=")!)
+            let accessToken = accessTokenString.suffix(from: positionAfterEqualSign)
+            
+            let expirationDate = Date(timeIntervalSinceNow: 86400)
+            
+            AuthManager.shared.accessToken = String(accessToken)
+            
             UserDefaults.standard.set(accessToken, forKey: "access_token")
-            print(UserDefaults.standard.string(forKey: "access_token"))
+            UserDefaults.standard.set(expirationDate, forKey: "expires_in")
+            
+            self.navigationController?.pushViewController(MainTabBarController(), animated: true)
+            self.navigationController?.viewControllers.removeFirst()
         }
     }
 }

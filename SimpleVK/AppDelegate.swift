@@ -13,7 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AuthManager.shared.accessToken = AuthManager.shared.loadToken()
         if let access_token = AuthManager.shared.accessToken {
-            AuthManager.shared.accessToken = access_token
+            if !AuthManager.shared.tokenIsValid() {
+                AuthManager.shared.removeToken()
+                print("Token is invalid")
+            } else {
+                print("Token is valid")
+                AuthManager.shared.accessToken = access_token
+            }
         }
         return true
     }

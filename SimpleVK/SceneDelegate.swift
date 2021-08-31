@@ -16,13 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             window = UIWindow(windowScene: windowScene)
             
-            let nc: UINavigationController
             if let access_token = AuthManager.shared.accessToken {
                 let mainTabBarController = MainTabBarController()
                 window?.rootViewController = mainTabBarController
             } else {
-                let vc = NewsViewController()
-                nc = UINavigationController(rootViewController: vc)
+                let nc = UINavigationController(rootViewController: RegistrationViewController())
                 window?.rootViewController = nc
             }
             
