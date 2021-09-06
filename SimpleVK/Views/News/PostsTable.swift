@@ -20,6 +20,9 @@ class PostsTable: UIViewController {
         let filters = "post"
         
         let request = AF.request("https://api.vk.com/method/\(method)?filters=\(filters)&count=10&access_token=\(access_token)&v=5.131")
+        request.responseJSON { data in
+            print(data)
+        }
         request.responseDecodable(of: Response.self) { data in
             if let all = data.value {
                 self.posts = all.items
@@ -64,7 +67,7 @@ extension PostsTable: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell else { return UITableViewCell() }
         let source = groups.first { $0.id == posts[indexPath.row].sourceId }!
         let sourceName = source.name
-        let sourceImage = (source.photos?[1].url)!
+        let sourceImage = source.photo
         cell.configure(post: posts[indexPath.row], sourceName: sourceName, sourceImageUrl: sourceImage)
         cell.backgroundColor = .clear
         return cell

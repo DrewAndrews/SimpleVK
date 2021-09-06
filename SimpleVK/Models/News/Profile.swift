@@ -11,13 +11,13 @@ struct Profile: Decodable {
     var id: Int
     var firstName: String
     var lastName: String
-    var photos: [ProfilePhoto]?
+    var photo: String
     
     enum ProfileCodingKeys: String, CodingKey {
         case id
         case firstName = "first_name"
         case lastName = "last_name"
-        case photos
+        case photo = "photo_50"
     }
     
     init(from decoder: Decoder) throws {
@@ -25,6 +25,6 @@ struct Profile: Decodable {
         id = try! container.decode(Int.self, forKey: .id)
         firstName = try! container.decode(String.self, forKey: .firstName)
         lastName = try! container.decode(String.self, forKey: .lastName)
-        photos = try? container.decode([ProfilePhoto].self, forKey: .photos)
+        photo = try! container.decode(String.self, forKey: .photo)
     }
 }

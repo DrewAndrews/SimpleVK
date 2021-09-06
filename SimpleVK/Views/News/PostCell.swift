@@ -21,6 +21,7 @@ class PostCell: UITableViewCell {
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.adjustsFontSizeToFitWidth = true
         authorLabel.minimumScaleFactor = 0.2
+        authorLabel.textColor = .black
         return authorLabel
     }()
 
@@ -29,6 +30,7 @@ class PostCell: UITableViewCell {
         publishedDateLabel.translatesAutoresizingMaskIntoConstraints = false
         publishedDateLabel.adjustsFontSizeToFitWidth = true
         publishedDateLabel.minimumScaleFactor = 0.2
+        publishedDateLabel.textColor = .black
         return publishedDateLabel
     }()
     
@@ -42,12 +44,14 @@ class PostCell: UITableViewCell {
         let postText = UILabel()
         postText.translatesAutoresizingMaskIntoConstraints = false
         postText.numberOfLines = 5
+        postText.textColor = .black
         return postText
     }()
     
     private let imageCountLabel: UILabel = {
         let imageCountLabel = UILabel()
         imageCountLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageCountLabel.textColor = .black
         return imageCountLabel
     }()
     
