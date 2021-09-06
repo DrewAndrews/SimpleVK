@@ -21,7 +21,6 @@ class FriendsViewController: UIViewController {
     private func loadFriends() {
         let loadFriendsIdsOperation = BlockOperation()
         loadFriendsIdsOperation.addExecutionBlock {
-            print(Thread.current)
             let method = "friends.get"
             let access_token = AuthManager.shared.accessToken!
             let fields = "nickname,status,last_seen,online"
@@ -31,20 +30,25 @@ class FriendsViewController: UIViewController {
             request.responseDecodable(of: FriendsList.self) { data in
                 if let friendsList = data.value?.items {
                     self.friends = friendsList
+                    print(friendsList)
                 }
             }
+        }
+        loadFriendsIdsOperation.qualityOfService = .utility
+        loadFriendsIdsOperation.completionBlock = {
+            print(1)
         }
         
         let updateTableOperation = BlockOperation()
         updateTableOperation.addDependency(loadFriendsIdsOperation)
         updateTableOperation.addExecutionBlock {
-            print(Thread.current)
-            print(self.friends)
+            
         }
         
         let operationQueue = OperationQueue()
+        operationQueue.maxConcurrentOperationCount = 1
         operationQueue.addOperation(loadFriendsIdsOperation)
-        operationQueue.addOperation(updateTableOperation)
+        //operationQueue.addOperation(updateTableOperation)
     }
 
     override func viewDidLoad() {

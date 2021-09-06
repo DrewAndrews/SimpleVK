@@ -28,6 +28,6 @@ class MainTabBarController: UITabBarController {
         let communtiesIcon = UITabBarItem(title: "Communties", image: UIImage(systemName: "person.3"), selectedImage: UIImage(systemName: "person.3.fill"))
         communties.tabBarItem = communtiesIcon
         
-        self.viewControllers = [news, friends, communties]
+        self.viewControllers = [news, communties, friends]
     }
 }

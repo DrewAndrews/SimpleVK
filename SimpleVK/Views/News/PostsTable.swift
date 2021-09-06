@@ -20,9 +20,6 @@ class PostsTable: UIViewController {
         let filters = "post"
         
         let request = AF.request("https://api.vk.com/method/\(method)?filters=\(filters)&count=10&access_token=\(access_token)&v=5.131")
-        request.responseJSON { data in
-            print(data)
-        }
         request.responseDecodable(of: Response.self) { data in
             if let all = data.value {
                 self.posts = all.items

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Token is invalid")
             } else {
                 print("Token is valid")
+                print(access_token)
                 AuthManager.shared.accessToken = access_token
             }
         }
