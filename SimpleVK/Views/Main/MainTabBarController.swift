@@ -17,17 +17,20 @@ class MainTabBarController: UITabBarController {
         super.viewWillAppear(animated)
         
         let news = PostsTable()
+        let newsNC = UINavigationController(rootViewController: news)
         let newsIcon = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), selectedImage: UIImage(systemName: "newspaper.fill"))
         news.tabBarItem = newsIcon
         
         let friends = FriendsViewController()
+        let friendsNC = UINavigationController(rootViewController: friends)
         let friendsIcon = UITabBarItem(title: "Friends", image: UIImage(systemName: "person.2"), selectedImage: UIImage(systemName: "person.2.fill"))
         friends.tabBarItem = friendsIcon
         
         let communties = CommunitiesViewController()
+        let communtiesNC = UINavigationController(rootViewController: communties)
         let communtiesIcon = UITabBarItem(title: "Communties", image: UIImage(systemName: "person.3"), selectedImage: UIImage(systemName: "person.3.fill"))
         communties.tabBarItem = communtiesIcon
         
-        self.viewControllers = [news, communties, friends]
+        self.viewControllers = [newsNC, communtiesNC, friendsNC]
     }
 }

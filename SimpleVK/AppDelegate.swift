@@ -15,10 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let access_token = AuthManager.shared.accessToken {
             if !AuthManager.shared.tokenIsValid() {
                 AuthManager.shared.removeToken()
-                print("Token is invalid")
             } else {
-                print("Token is valid")
-                print(access_token)
                 AuthManager.shared.accessToken = access_token
             }
         }

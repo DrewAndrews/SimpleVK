@@ -22,6 +22,7 @@
 		686D73E526E640F800F54D47 /* CommunityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E426E640F800F54D47 /* CommunityList.swift */; };
 		686D73E726E644D100F54D47 /* CommunityPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E626E644D100F54D47 /* CommunityPromise.swift */; };
 		686D73E926E6495F00F54D47 /* CommunityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E826E6495F00F54D47 /* CommunityCell.swift */; };
+		686D73EB26E7E68000F54D47 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73EA26E7E68000F54D47 /* CommunityDetailViewController.swift */; };
 		68A754FA26D7D07300190FF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A754F926D7D07300190FF5 /* LaunchScreen.storyboard */; };
 		68A754FC26D87EE300190FF5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A754FB26D87EE300190FF5 /* MainTabBarController.swift */; };
 		68A7550326D884B600190FF5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7550226D884B600190FF5 /* FriendsViewController.swift */; };
@@ -50,6 +51,7 @@
 		686D73E426E640F800F54D47 /* CommunityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityList.swift; sourceTree = "<group>"; };
 		686D73E626E644D100F54D47 /* CommunityPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityPromise.swift; sourceTree = "<group>"; };
 		686D73E826E6495F00F54D47 /* CommunityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCell.swift; sourceTree = "<group>"; };
+		686D73EA26E7E68000F54D47 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
 		68A754F926D7D07300190FF5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68A754FB26D87EE300190FF5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		68A7550226D884B600190FF5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				68A7550426D884C000190FF5 /* CommunitiesViewController.swift */,
 				686D73E826E6495F00F54D47 /* CommunityCell.swift */,
+				686D73EA26E7E68000F54D47 /* CommunityDetailViewController.swift */,
 			);
 			path = Communities;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				686D73E726E644D100F54D47 /* CommunityPromise.swift in Sources */,
 				68A7550526D884C000190FF5 /* CommunitiesViewController.swift in Sources */,
 				686D73E526E640F800F54D47 /* CommunityList.swift in Sources */,
+				686D73EB26E7E68000F54D47 /* CommunityDetailViewController.swift in Sources */,
 				6807B8BA26E0C606009658D5 /* FriendsList.swift in Sources */,
 				6807B8BC26E0CFBA009658D5 /* Friend.swift in Sources */,
 				68CCAA5C26D7C1A100C6C633 /* RegistrationViewController.swift in Sources */,

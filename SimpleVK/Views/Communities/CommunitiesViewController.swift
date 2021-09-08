@@ -28,6 +28,7 @@ class CommunitiesViewController: UIViewController {
                 self.tableView.reloadData()
             }
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
 
@@ -37,7 +38,7 @@ class CommunitiesViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
-        tableView.rowHeight = view.frame.height * 0.095
+        tableView.rowHeight = view.frame.height * 0.098
     }
     
     private func loadCommunityList() -> Promise<CommunityList> {
@@ -60,7 +61,7 @@ class CommunitiesViewController: UIViewController {
     }
 }
 
-extension CommunitiesViewController: UITableViewDataSource {
+extension CommunitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return communityList.count
     }
@@ -69,5 +70,16 @@ extension CommunitiesViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommunityCell.identifier, for: indexPath) as? CommunityCell else { return UITableViewCell() }
         cell.configure(community: communityList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let community = communityList[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath) as! CommunityCell
+        
+        let communityDetailViewController = CommunityDetailViewController()
+        communityDetailViewController.communityName.text = community.name
+        communityDetailViewController.communityPhoto.image = cell.communityPhoto.image
+
+        navigationController?.pushViewController(communityDetailViewController, animated: true)
     }
 }

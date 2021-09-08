@@ -19,7 +19,7 @@ class PostsTable: UIViewController {
         let method = "newsfeed.get"
         let filters = "post"
         
-        let request = AF.request("https://api.vk.com/method/\(method)?filters=\(filters)&count=10&access_token=\(access_token)&v=5.131")
+        let request = AF.request("https://api.vk.com/method/\(method)?filters=\(filters)&access_token=\(access_token)&v=5.131")
         request.responseDecodable(of: Response.self) { data in
             if let all = data.value {
                 self.posts = all.items
@@ -39,6 +39,7 @@ class PostsTable: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadNews()
         
         tableView.dataSource = self

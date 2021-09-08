@@ -11,7 +11,7 @@ import PromiseKit
 
 class CommunityCell: UITableViewCell {
     
-    private let communityPhoto: UIImageView = {
+    let communityPhoto: UIImageView = {
         let communityPhoto = UIImageView()
         communityPhoto.translatesAutoresizingMaskIntoConstraints = false
         return communityPhoto
@@ -20,18 +20,21 @@ class CommunityCell: UITableViewCell {
     private let communityName: UILabel = {
         let communityName = UILabel()
         communityName.translatesAutoresizingMaskIntoConstraints = false
+        communityName.textColor = .black
         return communityName
     }()
     
     private let communityMembers: UILabel = {
         let communityMembers = UILabel()
         communityMembers.translatesAutoresizingMaskIntoConstraints = false
+        communityMembers.textColor = .black
         return communityMembers
     }()
     
     private let roleTitle: UILabel = {
         let roleTitle = UILabel()
         roleTitle.translatesAutoresizingMaskIntoConstraints = false
+        roleTitle.textColor = .black
         return roleTitle
     }()
     

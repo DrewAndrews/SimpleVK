@@ -40,8 +40,9 @@ class RegistrationViewController: UIViewController, WKNavigationDelegate {
             UserDefaults.standard.set(accessToken, forKey: "access_token")
             UserDefaults.standard.set(expirationDate, forKey: "expires_in")
             
-            self.navigationController?.pushViewController(MainTabBarController(), animated: true)
-            self.navigationController?.viewControllers.removeFirst()
+            let mainTabBarController = MainTabBarController()
+            mainTabBarController.modalPresentationStyle = .fullScreen
+            self.present(mainTabBarController, animated: true, completion: nil)
         }
     }
 }

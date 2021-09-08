@@ -20,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let mainTabBarController = MainTabBarController()
                 window?.rootViewController = mainTabBarController
             } else {
-                let nc = UINavigationController(rootViewController: RegistrationViewController())
-                window?.rootViewController = nc
+                window?.rootViewController = RegistrationViewController()
             }
             
             window?.makeKeyAndVisible()
