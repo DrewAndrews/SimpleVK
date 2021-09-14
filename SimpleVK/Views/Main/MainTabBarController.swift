@@ -18,6 +18,7 @@ class MainTabBarController: UITabBarController {
         
         let news = PostsTable()
         let newsNC = UINavigationController(rootViewController: news)
+        newsNC.navigationBar.topItem?.title = "News"
         let newsIcon = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), selectedImage: UIImage(systemName: "newspaper.fill"))
         news.tabBarItem = newsIcon
         
@@ -28,6 +29,7 @@ class MainTabBarController: UITabBarController {
         
         let communties = CommunitiesViewController()
         let communtiesNC = UINavigationController(rootViewController: communties)
+        communtiesNC.navigationBar.topItem?.title = "Communties"
         let communtiesIcon = UITabBarItem(title: "Communties", image: UIImage(systemName: "person.3"), selectedImage: UIImage(systemName: "person.3.fill"))
         communties.tabBarItem = communtiesIcon
         

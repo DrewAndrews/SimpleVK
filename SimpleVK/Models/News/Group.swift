@@ -18,6 +18,12 @@ struct Group: Decodable {
         case photo = "photo_50"
     }
     
+    init() {
+        id = 0
+        name = ""
+        photo = ""
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try! decoder.container(keyedBy: GroupCodingKey.self)
         id = try! container.decode(Int.self, forKey: .id)

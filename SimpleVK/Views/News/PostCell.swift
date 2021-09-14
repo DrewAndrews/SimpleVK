@@ -150,10 +150,11 @@ class PostCell: UITableViewCell {
                     print(error)
                 }
             }
+        } else {
+            postImage.image = nil
         }
         
         if let attachments = post.attachments {
-            print(attachments)
             let imagesCount = attachments.filter { $0.type == "photo" }.count
             imageCountLabel.text = "Images: \(imagesCount)"
         } else {

@@ -17,7 +17,7 @@ class CommunitiesViewController: UIViewController {
         return tableView
     }()
     
-    private var communityList: [Community] = []
+    var communityList: [Community] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,11 @@ class CommunitiesViewController: UIViewController {
         view.addSubview(tableView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
@@ -45,7 +50,7 @@ class CommunitiesViewController: UIViewController {
         return Promise { seal in
             let method = "groups.get"
             let extended = 1
-            let fields = "members_count"
+            let fields = "members_count,status"
             let access_token = AuthManager.shared.accessToken!
             
             let url = URL(string: "https://api.vk.com/method/\(method)?fields=\(fields)&extended=\(extended)&access_token=\(access_token)&v=5.131")!
@@ -79,6 +84,10 @@ extension CommunitiesViewController: UITableViewDataSource, UITableViewDelegate 
         let communityDetailViewController = CommunityDetailViewController()
         communityDetailViewController.communityName.text = community.name
         communityDetailViewController.communityPhoto.image = cell.communityPhoto.image
+        communityDetailViewController.subscribersCountLabel.text = "Участников: \(community.membersCount)"
+        communityDetailViewController.communityId = community.id
+        communityDetailViewController.subscribeButton.setTitle(community.isMember ? "Отписаться" : "Подписаться", for: .normal)
+        communityDetailViewController.statusLabel.text = community.status
 
         navigationController?.pushViewController(communityDetailViewController, animated: true)
     }

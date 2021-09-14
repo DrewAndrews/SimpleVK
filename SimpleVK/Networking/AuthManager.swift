@@ -20,7 +20,7 @@ class AuthManager {
     init() {
         appId = "7935997"
         redirectUri = "https://oauth.vk.com/blank.html"
-        authURL = URL(string: "https://oauth.vk.com/authorize?client_id=\(appId)&redirect_uri=\(redirectUri)&scope=friends,wall,photos,groups&response_type=token&v=5.51")!
+        authURL = URL(string: "https://oauth.vk.com/authorize?client_id=\(appId)&redirect_uri=\(redirectUri)&scope=friends,wall,photos,groups,offline&response_type=token&v=5.51")!
     }
     
     func loadToken() -> String? {

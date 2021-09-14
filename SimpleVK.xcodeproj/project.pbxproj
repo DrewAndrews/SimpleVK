@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6807B8BA26E0C606009658D5 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6807B8B926E0C606009658D5 /* FriendsList.swift */; };
 		6807B8BC26E0CFBA009658D5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6807B8BB26E0CFBA009658D5 /* Friend.swift */; };
+		68120F8D26EC9E0E009EE8E3 /* ImageViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68120F8C26EC9E0E009EE8E3 /* ImageViewCollectionCell.swift */; };
 		6845AABA26D9E02C0025CA05 /* testing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6845AAB926D9E02C0025CA05 /* testing.storyboard */; };
 		6845AAC126D9E55A0025CA05 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6845AAC026D9E55A0025CA05 /* Post.swift */; };
 		6845AAC326DA4F930025CA05 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6845AAC226DA4F930025CA05 /* PostCell.swift */; };
@@ -20,9 +21,9 @@
 		6853CCC026DD229500741172 /* PostsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6853CCBF26DD229500741172 /* PostsTable.swift */; };
 		686D73E326E636CE00F54D47 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E226E636CE00F54D47 /* Community.swift */; };
 		686D73E526E640F800F54D47 /* CommunityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E426E640F800F54D47 /* CommunityList.swift */; };
-		686D73E726E644D100F54D47 /* CommunityPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E626E644D100F54D47 /* CommunityPromise.swift */; };
 		686D73E926E6495F00F54D47 /* CommunityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73E826E6495F00F54D47 /* CommunityCell.swift */; };
 		686D73EB26E7E68000F54D47 /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686D73EA26E7E68000F54D47 /* CommunityDetailViewController.swift */; };
+		6879F65626EB3E5C00309FF7 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879F65526EB3E5C00309FF7 /* PostDetailViewController.swift */; };
 		68A754FA26D7D07300190FF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A754F926D7D07300190FF5 /* LaunchScreen.storyboard */; };
 		68A754FC26D87EE300190FF5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A754FB26D87EE300190FF5 /* MainTabBarController.swift */; };
 		68A7550326D884B600190FF5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7550226D884B600190FF5 /* FriendsViewController.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		6807B8B926E0C606009658D5 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		6807B8BB26E0CFBA009658D5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		68120F8C26EC9E0E009EE8E3 /* ImageViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCollectionCell.swift; sourceTree = "<group>"; };
 		6845AAB926D9E02C0025CA05 /* testing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = testing.storyboard; sourceTree = "<group>"; };
 		6845AAC026D9E55A0025CA05 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6845AAC226DA4F930025CA05 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -49,9 +51,9 @@
 		6853CCBF26DD229500741172 /* PostsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTable.swift; sourceTree = "<group>"; };
 		686D73E226E636CE00F54D47 /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		686D73E426E640F800F54D47 /* CommunityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityList.swift; sourceTree = "<group>"; };
-		686D73E626E644D100F54D47 /* CommunityPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityPromise.swift; sourceTree = "<group>"; };
 		686D73E826E6495F00F54D47 /* CommunityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCell.swift; sourceTree = "<group>"; };
 		686D73EA26E7E68000F54D47 /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
+		6879F65526EB3E5C00309FF7 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		68A754F926D7D07300190FF5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68A754FB26D87EE300190FF5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		68A7550226D884B600190FF5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 			children = (
 				686D73E226E636CE00F54D47 /* Community.swift */,
 				686D73E426E640F800F54D47 /* CommunityList.swift */,
-				686D73E626E644D100F54D47 /* CommunityPromise.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -154,6 +155,8 @@
 			children = (
 				6845AAC226DA4F930025CA05 /* PostCell.swift */,
 				6853CCBF26DD229500741172 /* PostsTable.swift */,
+				6879F65526EB3E5C00309FF7 /* PostDetailViewController.swift */,
+				68120F8C26EC9E0E009EE8E3 /* ImageViewCollectionCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				68CCAA4026D771C400C6C633 /* AppDelegate.swift in Sources */,
 				6845AAC326DA4F930025CA05 /* PostCell.swift in Sources */,
 				68A754FC26D87EE300190FF5 /* MainTabBarController.swift in Sources */,
+				6879F65626EB3E5C00309FF7 /* PostDetailViewController.swift in Sources */,
 				686D73E326E636CE00F54D47 /* Community.swift in Sources */,
 				6853CCB426DB361C00741172 /* Profile.swift in Sources */,
 				6853CCBC26DB9CFE00741172 /* Attachment.swift in Sources */,
@@ -361,10 +365,10 @@
 				68A7550326D884B600190FF5 /* FriendsViewController.swift in Sources */,
 				6853CCB226DB360F00741172 /* Group.swift in Sources */,
 				6853CCB626DB3D9900741172 /* Photo.swift in Sources */,
+				68120F8D26EC9E0E009EE8E3 /* ImageViewCollectionCell.swift in Sources */,
 				686D73E926E6495F00F54D47 /* CommunityCell.swift in Sources */,
 				6853CCC026DD229500741172 /* PostsTable.swift in Sources */,
 				68CCAA5826D7850A00C6C633 /* AuthManager.swift in Sources */,
-				686D73E726E644D100F54D47 /* CommunityPromise.swift in Sources */,
 				68A7550526D884C000190FF5 /* CommunitiesViewController.swift in Sources */,
 				686D73E526E640F800F54D47 /* CommunityList.swift in Sources */,
 				686D73EB26E7E68000F54D47 /* CommunityDetailViewController.swift in Sources */,

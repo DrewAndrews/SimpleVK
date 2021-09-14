@@ -43,6 +43,7 @@ class PostsTable: UIViewController {
         loadNews()
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = .lightGray
         tableView.separatorStyle = .none
         
@@ -56,18 +57,32 @@ class PostsTable: UIViewController {
     }
 }
 
-extension PostsTable: UITableViewDataSource {
+extension PostsTable: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell else { return UITableViewCell() }
         let source = groups.first { $0.id == posts[indexPath.row].sourceId }!
         let sourceName = source.name
         let sourceImage = source.photo
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell else {
+            let newCell = PostCell()
+            newCell.configure(post: posts[indexPath.row], sourceName: sourceName, sourceImageUrl: sourceImage)
+            return newCell
+        }
         cell.configure(post: posts[indexPath.row], sourceName: sourceName, sourceImageUrl: sourceImage)
         cell.backgroundColor = .clear
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let source = groups.first { $0.id == posts[indexPath.row].sourceId }!
+        
+        let postDetailViewController = PostDetailViewController()
+        postDetailViewController.source = source
+        postDetailViewController.post = posts[indexPath.row]
+        
+        navigationController?.pushViewController(postDetailViewController, animated: true)
     }
 }
